@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h2>MyPortfolio</h2>
+  <nav>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Hi, I'm <span>Srijan Gupta</span></h1>
+  <p>Aspiring Web Developer passionate about building beautiful interfaces.</p>
+  <a href="#projects" class="btn">View Projects</a>
+</section>
+
+<section id="skills">
+  <h2 class="title">Skills</h2>
+  <div class="card">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">React</div>
+    <div class="skill">Git</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="title">Projects</h2>
+  <div class="grid">
+    <div class="card"><h3>Weather App</h3><p>API based weather application.</p></div>
+    <div class="card"><h3>Todo App</h3><p>Task manager using LocalStorage.</p></div>
+    <div class="card"><h3>Portfolio Website</h3><p>Responsive personal portfolio.</p></div>
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="title">Education Qualification</h2>
+  <div class="grid">
+    <div class="card"><h3>Bachelor Degree</h3><p>SGND Khalsa College, Delhi University 
+        <br>
+         2022-2026
+    </p></div>
+    <div class="card"><h3>12th Grade</h3><p>80%</p></div>
+    <div class="card"><h3>10th Grade</h3><p>88%</p></div>
+  </div>
+</section>
+
+<section id="hobbies">
+  <h2 class="title">Hobbies</h2>
+  <div class="card">
+    <p>Coding, Gym, Reading Tech Blogs, Travelling</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="title">Contact Me</h2>
+<form id="contactForm">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" rows="5" placeholder="Message"></textarea>
+  <button class="btn" type="submit">Send</button>
+</form>
+</section>
+
+<footer>© 2026 Your Name | All Rights Reserved</footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+
+  (function(){
+    emailjs.init("rxxe02po7cqjCs-aM");
+  })();
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_cdrnzcu", "template_7zs22xu", this)
+      .then(function() {
+        alert("Confirmation email sent successfully!");
+      }, function(error) {
+        alert("Failed to send email.");
+        console.log(error);
+      });
+  });
+
+</script>
+</body>
+</html>
